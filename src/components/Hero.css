@@ -1,0 +1,165 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.hero-slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1);
+}
+
+.hero-slide.active {
+  opacity: 1;
+  animation: heroZoom 7s ease-out forwards;
+}
+
+@keyframes heroZoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.12);
+  }
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 900px;
+  padding: 0 1.5rem;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+/* Premium Eyebrow */
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #22d3ee;
+  margin-bottom: 1.5rem;
+  padding: 0.6rem 1.5rem;
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  border-radius: 50px;
+  background: rgba(34, 211, 238, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+/* Premium Title Styling */
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero-title-main {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.hero-title-accent {
+  display: block;
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 4.5rem;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  margin-top: 0.2rem;
+}
+
+/* Premium Description */
+.hero-description {
+  font-size: 1.15rem;
+  font-weight: 300;
+  line-height: 1.9;
+  margin-bottom: 2.5rem;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-description em {
+  font-style: italic;
+  color: #22d3ee;
+  font-weight: 400;
+}
+
+.hero-buttons .btn {
+  margin: 0 0.5rem;
+  min-width: 200px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 4rem;
+  }
+
+  .hero-title-accent {
+    font-size: 5.5rem;
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.9rem;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
